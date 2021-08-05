@@ -11,7 +11,7 @@ trait AdminBaseTrait {
     }
 
     public function before_filter() {
-        // Require_login();
+        Require_login();
         $this->menuLinks = adminMenu();
     }
 

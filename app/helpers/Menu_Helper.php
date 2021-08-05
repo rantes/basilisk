@@ -33,6 +33,13 @@ function adminMenu() {
     return [
         new menuEntry('/admin/index', 'Inicio', null, 'home'),
         new menuEntry('/admin/users', 'Usuarios', null, 'user'),
-        new menuEntry('/admin/logout?logout=1', 'Salir', null, 'exit')
+        new menuEntry('/index/logout?logout=1', 'Salir', null, 'exit')
+    ];
+}
+
+function generalMenu() {
+    return [
+        new menuEntry('/index/index', 'Inicio', null, 'home'),
+        new menuEntry('/index/logout?logout=1', 'Salir', null, 'exit')
     ];
 }
