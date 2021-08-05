@@ -34,6 +34,60 @@
     </script>
 
     <style type="text/css">
+    /**
+#27401D
+#
+#C0A996
+**/
+:root {
+  --primary: #16253F;
+  --primary-contrast: #ffffff;
+  --primary-hover: #16253F99;
+  --secondary: #182517;
+  --secondary-contrast: #FAFBFC;
+  --secondary-hover: #E8EBEF;
+  --default: #848C41;
+  --default-contrast: #FFFFFF;
+  --default-hover: #99999999;
+  --error: #F44336;
+  --error-contrast: #FFFFFF;
+  --error-hover: #F4433699;
+  --success: #63AB71;
+  --success-contrast: #FFFFFF;
+  --success-hover: #63AB7199;
+  --warning: #E09B39;
+  --warning-contrast: #FFFFFF;
+  --warning-hover: #E09B3999;
+  --information: #51697C;
+  --information-contrast: #FFFFFF;
+  --information-hover: #51697C;
+  --hover-opacity: 0.5;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  font-display: swap;
+  font-style: normal;
+  font-weight: normal;
+  src:url('/fonts/icomoon/icomoon.woff');
+  src:url('/fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+      url('/fonts/icomoon/icomoon.woff') format('woff'),
+      url('/fonts/icomoon/icomoon.ttf') format('truetype'),
+      url('/fonts/icomoon/icomoon.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'OpenSansRegular', sans-serif;
+    font-display: swap;
+    font-style: normal;
+    font-weight: normal;
+    src:url('/fonts/openSans/Regular/OpenSans-Regular.ttf');
+    src:url('/fonts/openSans/Regular/OpenSans-Regular.otf') format('opentype'),
+        url('/fonts/openSans/Regular/OpenSans-Regular.woff') format('woff'),
+        url('/fonts/openSans/Regular/OpenSans-Regular.ttf') format('truetype'),
+        url('/fonts/openSans/Regular/OpenSans-Regular.svg') format('svg');
+}
+
 <? readfile(INST_PATH.'app/webroot/libs/dmb-styles.css'); ?>
 <? readfile(INST_PATH.'app/webroot/css/styles.css'); ?>
     </style>

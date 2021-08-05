@@ -6,12 +6,7 @@ const urlBlacklist = [
     '/index/setsesion'
 ];
 const urls = [
-    '/',
-    '/index/index',
-    '/index/login',
-    '/favicon.ico',
-    '/fonts/icomoon/icomoon.woff',
-    '/fonts/openSans/Regular/OpenSans-Regular.ttf'
+    '/index/login'
 ];
 
 function updateStaticCache() {

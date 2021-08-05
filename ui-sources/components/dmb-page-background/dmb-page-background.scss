@@ -1,0 +1,13 @@
+dmb-page-background {
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 0;
+
+    svg {
+        height: 95vh;
+        width: 100%;
+    }
+}

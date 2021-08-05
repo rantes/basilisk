@@ -17,8 +17,13 @@ dmb-login {
         width: 90%;
     }
 
-    svg {
-        height: auto;
+    .site-logo {
+        height: 20em;
         width: 100%;
+
+        svg {
+            height: 100%;
+            width: 100%;
+        }
     }
 }
