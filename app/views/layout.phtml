@@ -1,19 +1,76 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="utf-8"/>
-	<base href="<?=INST_URI;?>">
-	<title>Dumbo PHP</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <base href="<?=INST_URI;?>">
+    <title>Basilisk Project Management</title>
+    <meta name="msapplication-starturl" content="/">
+    <meta name="theme-color" content="#ff9901">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="description" content="Basilisk Project Management">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script type="text/javascript">
+        window.innerWidth = window.outerWidth;
+    </script>
+
+    <style type="text/css">
+<? readfile(INST_PATH.'app/webroot/libs/dmb-styles.css'); ?>
+<? readfile(INST_PATH.'app/webroot/css/styles.css'); ?>
+    </style>
 </head>
 <body>
-	<header>
-
-	</header>
-	<section class="content">
-		<?=$this->yield;?>
-	</section>
-	<footer>
-		<p><strong>Powered by DumboPHP</strong></p>
-	</footer>
+    <dmb-view class="dmb-view" id="page">
+        <dmb-header>
+            <div class="section-group">
+                <div class="col col2 col2-md col2-sm">
+                    <? if(_ACTION !== 'login' and !empty($_SESSION['admin'])): ?>
+                    <dmb-menu-button menu="#general-menu" legend="Men&uacute; Principal">Menu</dmb-menu-button>
+                    <? endif; ?>
+                </div>
+                <div class="col col10 col10-md col10-sm">
+                    <h1 class="site-name"><?=SITE_NAME;?></h1>
+                </div>
+            </div>
+        </dmb-header>
+        <dmb-content id="page-content">
+            <?=$this->yield;?>
+        </dmb-content>
+        <dmb-footer is="footer" id="page-footer"></dmb-footer>
+        <? if(_ACTION !== 'login' and !empty($_SESSION['admin'])): ?>
+        <dmb-panel id="general-menu" class="dmb-panel dmb-menu left">
+            <dmb-header>
+                <h3>Men&uacute;</h3>
+                <dmb-close-panel orientation="left"></dmb-close-panel>
+            </dmb-header>
+            <dmb-content>
+                <? foreach ($this->menuLinks as $entry): ?>
+                    <a class="item item-main" href="<?=$entry->link;?>" target="<?=$entry->target;?>">
+                        <i class="icon icon-<?=$entry->icon;?>"></i>
+                        <?=$entry->label;?>
+                    </a>
+                    <? if ($entry->hasItems): ?>
+                        <? foreach ($entry->items as $subEntry): ?>
+                        <a class="item item-secondary" href="<?=$subEntry->link;?>" target="<?=$entry->target;?>">
+                            <i class="icon icon-<?=$subEntry->icon;?>"></i>
+                            <?=$subEntry->label;?>
+                        </a>
+                        <? endforeach; ?>
+                    <? endif; ?>
+                <? endforeach; ?>
+            </dmb-content>
+        </dmb-panel>
+        <? endif; ?>
+    </dmb-view>
+    <script type="text/javascript">
+<? readfile(INST_PATH.'app/webroot/libs/dumbo.min.js'); ?>
+<? readfile(INST_PATH.'app/webroot/libs/dmb-factories.min.js'); ?>
+<? file_exists(INST_PATH.'app/webroot/js/factories.min.js') and readfile(INST_PATH.'app/webroot/js/factories.min.js'); ?>
+<? readfile(INST_PATH.'app/webroot/libs/dmb-components.min.js'); ?>
+<? file_exists(INST_PATH.'app/webroot/js/components.min.js') and readfile(INST_PATH.'app/webroot/js/components.min.js'); ?>
+    </script>
 </body>
 </html>

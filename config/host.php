@@ -3,7 +3,8 @@ defined('INST_PATH') or define('INST_PATH', dirname(dirname(__FILE__)).'/');
 $env_vars = parse_ini_file(INST_PATH.'.env');
 
 define('APP_ENV', $env_vars['APP_ENV']);
-define('INST_URI', $env_vars['SITE_URI']);
+define('INST_URI', $env_vars['INST_URI']);
+define('SITE_NAME', $env_vars['SITE_NAME']);
 define('SITE_STATUS','LIVE');
 define('LANDING_PAGE','index/landing');
 define('LANDING_REPLACE','ALL');

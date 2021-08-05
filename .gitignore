@@ -1,0 +1,4 @@
+.env
+tmp/
+*.log
+app/webroot/test.html

@@ -1,0 +1,5 @@
+<dmb-form action="/user/create/" dmb-name="user" enctype="application/x-www-form-urlencoded">
+    <dmb-input dmb-name="user[id]" value="<?=$this->data->id;?>" type="hidden"></dmb-input>
+    <dmb-input dmb-name="user[name]" label="name" value="<?=$this->data->name;?>" type="text" validate="required"></dmb-input>
+    <dmb-button type="submit" class="button button-success"><span class="text">Submit</span></dmb-button>
+</dmb-form>

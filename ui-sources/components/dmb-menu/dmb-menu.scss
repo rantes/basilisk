@@ -1,0 +1,78 @@
+.dmb-menu {
+    dmb-content {
+        background: var(--secondary);
+        color: var(--secondary-contrast);
+        padding-left: 0;
+        padding-right: 0;
+        text-align: left;
+
+        .item {
+            box-sizing: border-box;
+            color: var(--secondary-contrast);
+            cursor: pointer;
+            float: left;
+            height: 4em;
+            padding: 0.5em;
+            position: relative;
+            width: 100%;
+
+            * {
+                color: var(--secondary-contrast);
+
+                &:before {
+                    color: var(--secondary-contrast);
+                }
+            }
+
+            .menu-label {
+                transform: translate(0, -50%);
+                left: 40px;
+                max-height: 3.6em;
+                position: absolute;
+                top: 40%;
+            }
+
+            &.selected,
+            &:hover {
+              background-color: var(--primary);
+            }
+
+            &:after {
+              background-color: var(--secondary-contrast);
+              border: 0 none;
+              bottom: 0;
+              content: ' ';
+              height: 1px;
+              left: 15px;
+              margin: 0;
+              position: absolute;
+              right: 15px;
+            }
+
+            .icon {
+                &:before {
+                    font-size: 2em;
+                }
+            }
+        }
+
+        .item-secondary {
+            padding: 1.5em 0 0 4em;
+        }
+    }
+}
+
+dmb-menu-button {
+    .legend {
+        font-size: 1.3em;
+        height: 2em;
+    }
+}
+
+@include breakpoint(small) {
+    dmb-menu-button {
+        .legend {
+            display: none;
+        }
+    }
+}
