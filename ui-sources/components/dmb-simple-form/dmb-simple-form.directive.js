@@ -1,11 +1,11 @@
 /**
- * 
+ *
  */
 class DmbSimpleForm extends DumboDirective {
     constructor () {
         super();
     }
-    
+
     init() {
         const form = this.querySelector('dmb-form');
         const init = {
