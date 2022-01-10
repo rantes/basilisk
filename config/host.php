@@ -20,5 +20,11 @@ set_time_limit(0);
 ini_set('max_execution_time',0);
 
 define('SALT', '8c4fb7bf681156b52fea93442c7dffc9'); // Always change this string.
+
+date_default_timezone_set('America/Bogota');
+ini_set('date.timezone','America/Bogota');
+setlocale(LC_ALL, 'es_CO.utf8');
+putenv('LC_ALL=es_CO.utf8');
+bindtextdomain('translations', INST_PATH.'locale');
 $GLOBALS['env'] = APP_ENV;
 ?>

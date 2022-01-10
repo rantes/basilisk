@@ -1,4 +1,4 @@
-.dmb-table {
+dmb-table {
     clear: both;
     float: none;
     margin: auto;
@@ -7,7 +7,7 @@
     width: 100%;
 
     table {
-        border: solid 0.06em var(--secondary-hover);
+        border: solid 0.06em var(--secondary);
         border-radius: 0;
         border-spacing: 0;
         clear: both;
@@ -15,22 +15,27 @@
         width: 100%;
 
         thead {
-            background-color: var(--primary);
+            background-color: transparent;
             border: solid 0.06em var(--secondary);
 
             tr {
-                background-color: var(--primary-hover);
+                background-color: transparent;
 
                 &:first-child {
-                    background-color: var(--primary);
+                    background-color: transparent;
                 }
 
                 th {
-                    background-color: var(--primary);
+                    background-color: transparent;
+                    border-right: 0.06em var(--secondary) dashed;
                     border-radius: 0;
                     margin: 0;
                     padding: 0.5em;
                     text-transform: uppercase;
+
+                    &:last-child {
+                        border-right: 0 none transparent;
+                    }
                 }
             }
         }
@@ -39,6 +44,7 @@
             tr {
                 td {
                     border-right: 0.06em var(--secondary) dashed;
+                    border-top: 0.06em var(--secondary) dashed;
                     border-radius: 0;
                     padding: 0.5em;
                     margin: 0;
@@ -66,7 +72,7 @@
                 }
 
                 &:hover {
-                    background-color: var(--success-hover);
+                    background-color: var(--default-hover);
                 }
             }
         }
@@ -90,7 +96,7 @@
         border-radius: 0.2em;
         box-sizing: border-box;
         color: var(--primary-contrast);
-        padding: 0.2em; 
+        padding: 0.2em;
         width: 2.2em;
 
         &:before {
@@ -106,7 +112,7 @@
         border-radius: 0.2em;
         box-sizing: border-box;
         color: var(--secondary);
-        padding: 0.2em; 
+        padding: 0.2em;
 
         &:before {
             font-size: 1em;

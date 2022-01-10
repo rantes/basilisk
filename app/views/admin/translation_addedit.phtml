@@ -1,0 +1,33 @@
+<dmb-simple-form reset-cache>
+    <dmb-form action="/admin/translations/save" id="form-translation" name="translation" method="post" async>
+        <input type="hidden" value="<?=$this->data->id;?>" name="translation[id]" />
+        <dmb-header>
+            <dmb-close-panel orientation="right"></dmb-close-panel>
+            <? if(empty($this->data->id)): ?>
+                <h3><?=_('general.form.title.addreg');?></h3>
+            <? else: ?>
+                <h3><?=_('general.form.title.editreg');?></h3>
+            <? endif; ?>
+        </dmb-header>
+        <dmb-content>
+            <div class="section group">
+                <div class="col col12">
+                    <dmb-input
+                        label="<?=_('admin.translation.label.translation');?>"
+                        value="<?=$this->data->translation;?>"
+                        dmb-name="translation[translation]"
+                        validate="required"
+                    ></dmb-input>
+                </div>
+            </div>
+        </dmb-content>
+        <dmb-footer dmb-class="section group">
+            <div class="col col6 col6-md col6-sm">
+                <dmb-button type="reset" class="button button-error" onClick="location.reload();"><span class="text"><?=_('general.form.button.cancel');?></span></dmb-button>
+            </div>
+            <div class="col col6 col6-md col6-sm">
+                <dmb-button type="submit" class="button button-success"><span class="text"><?=_('general.form.button.save');?></span></dmb-button>
+            </div>
+        </dmb-footer>
+    </dmb-form>
+</dmb-simple-form>

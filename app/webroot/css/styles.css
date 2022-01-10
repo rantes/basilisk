@@ -1398,14 +1398,217 @@ a:visited, a:active {
   background: var(--default);
 }
 
-muy-button-action.main-add {
+.site-logotype {
+  color: var(--primary);
+  font-family: 'MarketFresh', sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#page-content {
+  background-color: var(--secondary-hover);
+}
+
+dmb-button-action.icon {
+  width: auto;
+}
+
+dmb-button-action.icon:before {
   align-items: center;
   font-size: 1.2em;
 }
 
-muy-button-action.main-add::before {
+dmb-button-action.main-add {
+  align-items: center;
+  font-size: 1.2em;
+}
+
+dmb-button-action.main-add::before {
   font-size: 1.2em;
   margin: 0 0.5em;
+}
+
+dmb-card {
+  background-color: var(--primary-contrast);
+  border: none;
+  border-radius: 0.5em;
+  box-shadow: 0px 2px 1px -1px #00000099, 0px 1px 1px 0px #00000066, 0px 1px 3px 0px #00000055;
+  color: var(--primary);
+  float: left;
+  margin-bottom: 1em;
+  margin-right: 1em;
+  min-height: 12em;
+  padding: 0.5em;
+  position: relative;
+  width: 21em;
+  word-wrap: break-word;
+}
+
+dmb-card .head {
+  border-bottom: solid 1px var(--default);
+  padding-bottom: 0.5em;
+}
+
+dmb-card .head .header {
+  color: var(--primary);
+  font-weight: bold;
+  margin: 0;
+  padding: 0.5em;
+}
+
+dmb-card .head h2 {
+  margin: 0;
+}
+
+dmb-card .body {
+  margin-top: 0.5em;
+}
+
+dmb-card .body .item {
+  margin-bottom: 0.5em;
+}
+
+dmb-card .body .label {
+  color: var(--primary);
+}
+
+dmb-card .body .content {
+  color: var(--primary);
+  font-weight: bold;
+  overflow-wrap: break-word;
+  text-align: right;
+  word-wrap: break-word;
+}
+
+dmb-card.half-height {
+  min-height: 6em;
+}
+
+dmb-card.icon {
+  padding-right: 4em;
+  position: relative;
+}
+
+dmb-card.icon:before {
+  border-radius: 50%;
+  font-size: 3em;
+  padding: 10px;
+  position: absolute;
+  right: 0.1em;
+  top: 0.1em;
+}
+
+dmb-card.icon .body .content {
+  font-size: 2em;
+  text-align: center;
+  width: 100%;
+}
+
+dmb-card.icon .body .label {
+  font-size: smaller;
+}
+
+dmb-card.border-start {
+  border-bottom: 0;
+  border-left: 4px;
+  border-right: 0;
+  border-top: 0;
+  border-style: solid;
+}
+
+dmb-card.border-primary {
+  border-color: var(--primary);
+}
+
+dmb-card.border-primary.icon:before {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+}
+
+dmb-card.border-secondary {
+  border-color: var(--secondary);
+}
+
+dmb-card.border-secondary.icon:before {
+  background-color: var(--secondary);
+  color: var(--secondary-contrast);
+}
+
+dmb-card.border-default {
+  border-color: var(--default);
+}
+
+dmb-card.border-default.icon:before {
+  background-color: var(--default);
+  color: var(--default-contrast);
+}
+
+dmb-card.border-error {
+  border-color: var(--error);
+}
+
+dmb-card.border-error.icon:before {
+  background-color: var(--error);
+  color: var(--error-contrast);
+}
+
+dmb-card.border-success {
+  border-color: var(--success);
+}
+
+dmb-card.border-success.icon:before {
+  background-color: var(--success);
+  color: var(--success-contrast);
+}
+
+dmb-card.border-warning {
+  border-color: var(--warning);
+}
+
+dmb-card.border-warning.icon:before {
+  background-color: var(--warning);
+  color: var(--warning-contrast);
+}
+
+dmb-card.border-information {
+  border-color: var(--information);
+}
+
+dmb-card.border-information.icon:before {
+  background-color: var(--information);
+  color: var(--information-contrast);
+}
+
+dmb-card.small {
+  height: auto;
+  min-height: 3em;
+  width: 16em;
+}
+
+dmb-card.full {
+  height: auto;
+  padding: 2em;
+  width: 100%;
+}
+
+dmb-close-panel {
+  top: 0;
+}
+
+dmb-close-panel .icon {
+  font-size: 2em;
+}
+
+dmb-content {
+  top: 3em;
+}
+
+dmb-header {
+  height: 3em;
+}
+
+dmb-input input {
+  background-color: var(--primary-contrast);
 }
 
 dmb-login {
@@ -1439,17 +1642,29 @@ dmb-login .site-logo svg {
 }
 
 dmb-menu-button {
-  top: 1em;
-  left: 1.5em;
+  display: block;
+  float: left;
+  height: 2em;
+  left: 0;
+  margin-right: 1em;
+  margin-top: 0.3em;
+  position: initial;
+  top: 0;
+  transform: translateX(50%);
 }
 
 dmb-menu-button .icon:before {
   font-size: 2em;
 }
 
+.dmb-menu dmb-header {
+  background-color: var(--primary);
+  color: var(--primary-contrast);
+}
+
 .dmb-menu dmb-content {
-  background: var(--secondary);
-  color: var(--secondary-contrast);
+  background: var(--primary-contrast);
+  color: var(--primary);
   padding-left: 0;
   padding-right: 0;
   text-align: left;
@@ -1457,7 +1672,7 @@ dmb-menu-button .icon:before {
 
 .dmb-menu dmb-content .item {
   box-sizing: border-box;
-  color: var(--secondary-contrast);
+  color: var(--primary);
   cursor: pointer;
   float: left;
   height: 4em;
@@ -1467,11 +1682,11 @@ dmb-menu-button .icon:before {
 }
 
 .dmb-menu dmb-content .item * {
-  color: var(--secondary-contrast);
+  color: var(--primary);
 }
 
 .dmb-menu dmb-content .item *:before {
-  color: var(--secondary-contrast);
+  color: var(--primary);
 }
 
 .dmb-menu dmb-content .item .menu-label {
@@ -1483,11 +1698,11 @@ dmb-menu-button .icon:before {
 }
 
 .dmb-menu dmb-content .item.selected, .dmb-menu dmb-content .item:hover {
-  background-color: var(--primary);
+  background-color: var(--secondary-hover);
 }
 
 .dmb-menu dmb-content .item:after {
-  background-color: var(--secondary-contrast);
+  background-color: var(--secondary);
   border: 0 none;
   bottom: 0;
   content: ' ';
@@ -1500,6 +1715,21 @@ dmb-menu-button .icon:before {
 
 .dmb-menu dmb-content .item .icon:before {
   font-size: 2em;
+}
+
+.dmb-menu dmb-content .item-main.icon:before {
+  font-size: 2.5em;
+  left: auto;
+  position: absolute;
+  right: 0.5em;
+}
+
+.dmb-menu dmb-content .item-main ~ .submenu {
+  display: none;
+}
+
+.dmb-menu dmb-content .item-main.actived ~ .submenu {
+  display: inline;
 }
 
 .dmb-menu dmb-content .item-secondary {
@@ -1517,6 +1747,60 @@ dmb-menu-button .legend {
   }
 }
 
+dmb-more-option {
+  display: inline-block;
+  padding: 0.3em 0.5em;
+  border-bottom: solid 1px var(--default);
+  width: 100%;
+}
+
+dmb-more-option:last-child {
+  border-bottom: none;
+}
+
+dmb-more-option:hover {
+  color: var(--default);
+}
+
+dmb-more-options {
+  color: var(--primary);
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+
+dmb-more-options .wrapper {
+  background-color: var(--secondary);
+  display: none;
+  padding: 0.2em 0.3em;
+  position: absolute;
+  right: 3em;
+}
+
+dmb-more-options .wrapper.active {
+  display: inline-block;
+  z-index: 1;
+}
+
+dmb-more-options .wrapper:after {
+  content: '';
+  border: 1em solid var(--secondary);
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  height: 0;
+  margin-top: -1em;
+  margin-bottom: -1em;
+  margin-right: -3em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  width: 0;
+}
+
+dmb-more-options .wrapper dmb-more-option {
+  color: var(--secondary-contrast);
+}
+
 dmb-page-background {
   position: fixed;
   height: 100vh;
@@ -1531,7 +1815,61 @@ dmb-page-background svg {
   width: 100%;
 }
 
-.dmb-table {
+dmb-pagination {
+  margin-bottom: 1em;
+  margin-top: 1em;
+  padding-bottom: 1em;
+  padding-top: 1em;
+}
+
+dmb-pagination .paginate-page {
+  border: solid 1px var(--default-hover);
+  margin-left: -1px;
+  margin-right: 0;
+  padding: 0.375rem 0.75rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+dmb-pagination .paginate-page:hover:not(.paginate-page-active) {
+  background-color: var(--secondary-hover);
+}
+
+dmb-pagination .paginate-page-active {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: var(--primary-contrast);
+  cursor: default;
+}
+
+dmb-search {
+  width: 100%;
+}
+
+dmb-search dmb-input {
+  float: left;
+  margin-right: 1em;
+  width: calc(99% - 4em);
+}
+
+dmb-search dmb-input label {
+  display: none;
+}
+
+dmb-search dmb-input input {
+  height: 2.7em;
+}
+
+.col dmb-search dmb-button.button {
+  float: left;
+  width: 3em;
+}
+
+dmb-select select {
+  background-color: var(--primary-contrast);
+  color: var(--primary);
+}
+
+dmb-table {
   clear: both;
   float: none;
   margin: auto;
@@ -1540,8 +1878,8 @@ dmb-page-background svg {
   width: 100%;
 }
 
-.dmb-table table {
-  border: solid 0.06em var(--secondary-hover);
+dmb-table table {
+  border: solid 0.06em var(--secondary);
   border-radius: 0;
   border-spacing: 0;
   clear: both;
@@ -1549,60 +1887,66 @@ dmb-page-background svg {
   width: 100%;
 }
 
-.dmb-table table thead {
-  background-color: var(--primary);
+dmb-table table thead {
+  background-color: transparent;
   border: solid 0.06em var(--secondary);
 }
 
-.dmb-table table thead tr {
-  background-color: var(--primary-hover);
+dmb-table table thead tr {
+  background-color: transparent;
 }
 
-.dmb-table table thead tr:first-child {
-  background-color: var(--primary);
+dmb-table table thead tr:first-child {
+  background-color: transparent;
 }
 
-.dmb-table table thead tr th {
-  background-color: var(--primary);
+dmb-table table thead tr th {
+  background-color: transparent;
+  border-right: 0.06em var(--secondary) dashed;
   border-radius: 0;
   margin: 0;
   padding: 0.5em;
   text-transform: uppercase;
 }
 
-.dmb-table table tbody tr td {
+dmb-table table thead tr th:last-child {
+  border-right: 0 none transparent;
+}
+
+dmb-table table tbody tr td {
   border-right: 0.06em var(--secondary) dashed;
+  border-top: 0.06em var(--secondary) dashed;
   border-radius: 0;
   padding: 0.5em;
   margin: 0;
   text-align: center;
 }
 
-.dmb-table table tbody tr td:last-child {
+dmb-table table tbody tr td:last-child {
   border-right: 0 none transparent;
 }
 
-.dmb-table table tbody tr td.truncated {
+dmb-table table tbody tr td.truncated {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 25em;
   white-space: nowrap;
 }
 
-.dmb-table table tbody tr td.actions {
+dmb-table table tbody tr td.actions {
   width: 2em;
   white-space: nowrap;
 }
 
-.dmb-table table tbody tr:nth-child(odd) {
+dmb-table table tbody tr:nth-child(odd) {
   background-color: var(--secondary-hover);
 }
 
-.dmb-table table tbody tr:hover {
-  background-color: var(--success-hover);
+dmb-table table tbody tr:hover {
+  background-color: var(--default-hover);
 }
 
-.dmb-table table tfoot tr td {
+dmb-table table tfoot tr td {
   background-color: var(--secondary-hover);
   border-radius: 0;
   padding-bottom: 0.6em;
@@ -1610,7 +1954,7 @@ dmb-page-background svg {
   text-align: center;
 }
 
-.dmb-table .table-button {
+dmb-table .table-button {
   background-color: var(--primary);
   border: 1px solid var(--default-hover);
   border-radius: 0.2em;
@@ -1620,13 +1964,13 @@ dmb-page-background svg {
   width: 2.2em;
 }
 
-.dmb-table .table-button:before {
+dmb-table .table-button:before {
   font-size: 1em;
   color: var(--secondary);
   width: 2em;
 }
 
-.dmb-table .head-button {
+dmb-table .head-button {
   background-color: var(--primary-contrast);
   border: 1px solid var(--default-hover);
   border-radius: 0.2em;
@@ -1635,7 +1979,7 @@ dmb-page-background svg {
   padding: 0.2em;
 }
 
-.dmb-table .head-button:before {
+dmb-table .head-button:before {
   font-size: 1em;
   color: var(--secondary);
 }

@@ -9,7 +9,12 @@
     </dmb-page-background>
     <h1>Basilisk Project Management System</h1>
     <dmb-dialog delay="0.5" no-close>
-        <dmb-login target="/index/">
+        <dmb-login
+            target="/index/"
+            user-label="<?=_('admin.login.username.label');?>"
+            pass-label="<?=_('admin.login.password.label');?>"
+            button-label="<?=_('admin.login.button.label');?>"
+        >
             <div class="site-logo">
             <? readfile(INST_PATH.'app/webroot/images/logo.svg'); ?>
             </div>

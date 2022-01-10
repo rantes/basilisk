@@ -1,14 +1,18 @@
 .dmb-menu {
+    dmb-header {
+        background-color: var(--primary);
+        color: var(--primary-contrast);
+    }
     dmb-content {
-        background: var(--secondary);
-        color: var(--secondary-contrast);
+        background: var(--primary-contrast);
+        color: var(--primary);
         padding-left: 0;
         padding-right: 0;
         text-align: left;
 
         .item {
             box-sizing: border-box;
-            color: var(--secondary-contrast);
+            color: var(--primary);
             cursor: pointer;
             float: left;
             height: 4em;
@@ -17,10 +21,10 @@
             width: 100%;
 
             * {
-                color: var(--secondary-contrast);
+                color: var(--primary);
 
                 &:before {
-                    color: var(--secondary-contrast);
+                    color: var(--primary);
                 }
             }
 
@@ -34,11 +38,11 @@
 
             &.selected,
             &:hover {
-              background-color: var(--primary);
+              background-color: var(--secondary-hover);
             }
 
             &:after {
-              background-color: var(--secondary-contrast);
+              background-color: var(--secondary);
               border: 0 none;
               bottom: 0;
               content: ' ';
@@ -52,6 +56,27 @@
             .icon {
                 &:before {
                     font-size: 2em;
+                }
+            }
+
+            &-main {
+                &.icon {
+                    &:before {
+                        font-size: 2.5em;
+                        left: auto;
+                        position: absolute;
+                        right: 0.5em;
+                    }
+                }
+
+                & ~ .submenu {
+                    display: none;
+                }
+
+                &.actived {
+                    & ~ .submenu {
+                        display: inline;
+                    }
                 }
             }
         }

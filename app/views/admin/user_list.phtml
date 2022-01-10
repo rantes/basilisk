@@ -1,0 +1,90 @@
+<dmb-card class="full">
+    <section class="section group head">
+        <div class="col col4 col4-md col4-sm">
+            <h2><?=_('admin.users.title');?></h2>
+        </div>
+        <div class="col col4 col4-md col4-sm header">
+        </div>
+        <div class="col col2 col2-md col2-sm">
+            <dmb-button-action
+                action="new"
+                panel="#panel-form-user"
+                url="/admin/users/add"
+                class="button-primary"
+                behavior="open-panel">
+                <?=_('general.add.reg');?>
+            </dmb-button-action>
+        </div>
+        <div class="col col2 col2-md col2-sm">
+            <dmb-search
+                action="/admin/users/"
+                label="<?=_('general.search');?>"
+                fields="name"
+                dmb-value="<?=$this->searchterm;?>"
+                dmb-id="search-user"
+            ></dmb-search>
+        </div>
+    </section>
+    <section class="section group body">
+        <? if ($this->data->counter() > 0): ?>
+        <section class="section group">
+            <dmb-pagination class="col col12" filter-form="#search-translation">
+                <span class="paginate"><?=_('general.pagination.pages');?>: </span> <?= $this->data->WillPaginate(); ?>
+                <span class="paginate"> <?=_('general.pagination.of');?> <?=$this->data->PaginateTotalPages;?></span>
+            </dmb-pagination>
+        </section>
+        <section class="section group">
+            <dmb-table>
+            <table>
+                <thead>
+                    <tr>
+                        <th><?=_('admin.users.list.firstname');?></th>
+                        <th><?=_('admin.users.list.lastname');?></th>
+                        <th><?=_('admin.users.list.email');?></th>
+                        <th><?=_('admin.users.list.status');?></th>
+                        <th colspan="2"><?=_('general.datareg.actions');?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <? foreach($this->data as $row): ?>
+                        <tr>
+                            <td><?=$row->firstname;?></td>
+                            <td><?=$row->lastname;?></td>
+                            <td><?=$row->email;?></td>
+                            <td><?=$row->status;?></td>
+                            <td>
+                                <dmb-button-action
+                                    action="edit"
+                                    panel="#panel-form-user"
+                                    url="/admin/users/edit/<?=$row->id?>"
+                                    class="button-primary"
+                                    behavior="open-panel">
+                                </dmb-button-action>
+                            </td>
+                            <td>
+                                <dmb-button-action
+                                    action="delete"
+                                    url="/admin/users/delete/<?=$row->id?>"
+                                    class="button-primary"
+                                    behavior="ajax">
+                                </dmb-button-action>
+                            </td>
+                        </tr>
+                <? endforeach; ?>
+            </tbody>
+        </table>
+        </dmb-table>
+        </section>
+        <section class="section group">
+            <dmb-pagination class="col col12" filter-form="#search-user">
+                <span class="paginate"><?=_('general.pagination.pages');?>: </span> <?= $this->data->WillPaginate(); ?>
+                <span class="paginate"> <?=_('general.pagination.of');?> <?=$this->data->PaginateTotalPages;?></span>
+            </dmb-pagination>
+        </section>
+        <? else: ?>
+        <h3><?=_('general.norecords');?></h3>
+        <? endif; ?>
+    </section>
+</dmb-card>
+
+<dmb-panel id="panel-form-user" source="" class="dmb-panel"></dmb-panel>

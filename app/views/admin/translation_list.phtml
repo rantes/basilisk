@@ -1,0 +1,96 @@
+<dmb-card class="full">
+    <section class="section group head">
+        <div class="col col5 col5-md col5-sm">
+            <h2><?=_('admin.translations.title');?></h2>
+        </div>
+        <div class="col col3 col3-md col3-sm">
+            <dmb-button-action
+                action="ajax"
+                url="/admin/buildlanguages/"
+                class="button-primary icon-network"
+                behavior="ajax"
+            >
+                <?=_('admin.languages.button.buildlangs');?>
+            </dmb-button-action>
+        </div>
+        <div class="col col2 col2-md col2-sm">
+            <dmb-button-action
+                action="new"
+                panel="#panel-form-translation"
+                url="/admin/translations/add"
+                class="button-primary"
+                behavior="open-panel">
+                <?=_('general.add.reg');?>
+            </dmb-button-action>
+        </div>
+        <div class="col col2 col2-md col2-sm">
+            <dmb-search
+                action="/admin/translations/"
+                label="<?=_('general.search.label');?>"
+                fields="locale,keyid"
+                dmb-value="<?=$this->searchterm;?>"
+                dmb-id="search-translation"
+            ></dmb-search>
+        </div>
+    </section>
+    <section class="section group body">
+        <? if ($this->data->counter() > 0): ?>
+        <section class="section group">
+            <dmb-pagination class="col col12" filter-form="#search-translation">
+                <span class="paginate"><?=_('general.pagination.pages');?>: </span> <?= $this->data->WillPaginate(); ?>
+                <span class="paginate"> <?=_('general.pagination.of');?> <?=$this->data->PaginateTotalPages;?></span>
+            </dmb-pagination>
+        </section>
+        <section class="section group">
+            <dmb-table>
+            <table>
+                <thead>
+                    <tr>
+                        <th><?=_('admin.translations.title.locale');?></th>
+                        <th><?=_('admin.translations.title.keyid');?></th>
+                        <th><?=_('admin.translations.title.translation');?></th>
+                        <th colspan="2"><?=_('general.datareg.actions');?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <? foreach($this->data as $row): ?>
+                        <tr>
+                            <td><?=$row->locale;?></td>
+                            <td><?=$row->keyid;?></td>
+                            <td><?=$row->translation;?></td>
+                            <td>
+                                <dmb-button-action
+                                    action="edit"
+                                    panel="#panel-form-translation"
+                                    url="/admin/translations/edit/<?=$row->id?>"
+                                    class="button-primary"
+                                    behavior="open-panel">
+                                </dmb-button-action>
+                            </td>
+                            <td>
+                                <dmb-button-action
+                                    action="delete"
+                                    url="/admin/translations/delete/<?=$row->id?>"
+                                    class="button-primary"
+                                    behavior="ajax">
+                                </dmb-button-action>
+                            </td>
+                        </tr>
+                <? endforeach; ?>
+            </tbody>
+        </table>
+        </dmb-table>
+        </section>
+        <section class="section group">
+            <dmb-pagination class="col col12" filter-form="#search-translation">
+                <span class="paginate"><?=_('general.pagination.pages');?>: </span> <?= $this->data->WillPaginate(); ?>
+                <span class="paginate"> <?=_('general.pagination.of');?> <?=$this->data->PaginateTotalPages;?></span>
+            </dmb-pagination>
+        </section>
+        <? else: ?>
+        <h3><?=_('general.norecords');?></h3>
+        <? endif; ?>
+    </section>
+</dmb-card>
+
+<dmb-panel id="panel-form-translation" source="" class="dmb-panel"></dmb-panel>

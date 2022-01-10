@@ -6,21 +6,16 @@
 <body>
     <dmb-view class="dmb-view" id="page">
         <dmb-header>
-            <div class="section-group">
-                <div class="col col2 col2-md col2-sm">
-                    <? if(_ACTION !== 'login'): ?>
-                    <dmb-menu-button menu="#general-menu" legend="Men&uacute; Principal">Menu</dmb-menu-button>
-                    <? endif; ?>
-                </div>
-                <div class="col col10 col10-md col10-sm">
-                    <h1 class="site-name"><?=SITE_NAME;?></h1>
-                </div>
-            </div>
+            <? if(_ACTION !== 'login'): ?>
+            <dmb-menu-button menu="#general-menu" legend="Men&uacute; Principal"></dmb-menu-button>
+            <? endif; ?>
+            <hgroup>
+                <h1 class="site-logotype"><?=SITE_NAME;?></h1>
+            </hgroup>
         </dmb-header>
         <dmb-content id="page-content">
             <?=$this->yield;?>
         </dmb-content>
-        <dmb-footer is="footer" id="page-footer"></dmb-footer>
         <? if(_ACTION !== 'login'): ?>
         <dmb-panel id="general-menu" class="dmb-panel dmb-menu left">
             <dmb-header>

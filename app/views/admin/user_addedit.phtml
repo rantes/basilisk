@@ -1,0 +1,64 @@
+<dmb-simple-form reset-cache>
+    <dmb-form action="/admin/users/save" id="form-user" name="user" method="post" async>
+        <input type="hidden" value="<?=$this->data->id;?>" name="user[id]" />
+        <dmb-header>
+            <dmb-close-panel orientation="right"></dmb-close-panel>
+            <? if(empty($this->data->id)): ?>
+                <h3><?=_('general.form.title.addreg');?></h3>
+            <? else: ?>
+                <h3><?=_('general.form.title.editreg');?></h3>
+            <? endif; ?>
+        </dmb-header>
+        <dmb-content>
+            <div class="section group">
+                <div class="col col12">
+                    <dmb-input
+                        label="<?=_('admin.users.input.firstname');?>"
+                        value="<?=$this->data->firstname;?>"
+                        dmb-name="user[firstname]"
+                        validate="required"
+                    ></dmb-input>
+                </div>
+            </div>
+            <div class="section group">
+                <div class="col col12">
+                    <dmb-input
+                        label="<?=_('admin.users.input.lastname');?>"
+                        value="<?=$this->data->lastname;?>"
+                        dmb-name="user[lastname]"
+                        validate="required"
+                    ></dmb-input>
+                </div>
+            </div>
+            <div class="section group">
+                <div class="col col12">
+                    <dmb-input
+                        label="<?=_('admin.users.input.email');?>"
+                        value="<?=$this->data->email;?>"
+                        type="email"
+                        dmb-name="user[email]"
+                        validate="required,email"
+                    ></dmb-input>
+                </div>
+            </div>
+            <div class="section group">
+                <div class="col col12">
+                    <dmb-input
+                        label="<?=_('admin.users.input.status');?>"
+                        value="<?=$this->data->status;?>"
+                        dmb-name="user[status]"
+                        validate="required"
+                    ></dmb-input>
+                </div>
+            </div>
+        </dmb-content>
+        <dmb-footer dmb-class="section group">
+            <div class="col col6 col6-md col6-sm">
+                <dmb-button type="reset" class="button button-error" onClick="location.reload();"><span class="text"><?=_('general.form.button.cancel');?></span></dmb-button>
+            </div>
+            <div class="col col6 col6-md col6-sm">
+                <dmb-button type="submit" class="button button-success"><span class="text"><?=_('general.form.button.save');?></span></dmb-button>
+            </div>
+        </dmb-footer>
+    </dmb-form>
+</dmb-simple-form>

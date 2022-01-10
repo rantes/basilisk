@@ -41,3 +41,14 @@ a {
       background: var(--default);
     }
 }
+
+.site-logotype {
+  color: var(--primary);
+  font-family: 'MarketFresh', sans-serif;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+#page-content {
+  background-color: var(--secondary-hover);
+}

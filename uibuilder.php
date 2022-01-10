@@ -135,6 +135,7 @@ class UIBuilder {
                 $file = $this->_cleanJS($file);
                 file_put_contents(INST_PATH.'app/webroot/js/components.min.js', file_get_contents($file)."\n", FILE_APPEND);
             endwhile;
+            chmod(INST_PATH.'app/webroot/js/components.min.js', 0664);
         endif;
     }
 
