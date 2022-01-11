@@ -4,3 +4,5 @@ tmp/
 app/webroot/test.html
 *.po~
 *.po
+coverage.xml
+test-result.xml
