@@ -11,7 +11,7 @@
     "require": {
         "php": "^7.4.0",
         "ext-pdo": "*",
-        "rantes/dumbophp": "^2.8.2.7"
+        "rantes/dumbophp": "^2.8.20"
     },
     "require-dev": {},
     "autoload": {
