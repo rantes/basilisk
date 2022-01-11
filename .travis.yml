@@ -1,6 +1,5 @@
 language: php
 php:
   - '7.4'
-script:
-  - composer install
-  - dumboTest all
+before_script: composer install
+script: ./dumboTest all
