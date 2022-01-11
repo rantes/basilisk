@@ -8,7 +8,6 @@ class IndexController extends Page {
     public $exceptsBeforeFilter = [
         'actions' => 'login,logout,signin'
     ];
-    public $noTemplate = ['logout'];
 
     public function before_filter() {
         Require_login();
@@ -17,11 +16,6 @@ class IndexController extends Page {
 
     public function indexAction() {
         $this->render = ['text'=>'noop'];
-    }
-
-    public function loginAction() {
-        $this->layout = false;
-        !empty($_SESSION['user']) and header('Location: /login/index');
     }
 
 }

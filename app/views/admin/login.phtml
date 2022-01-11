@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <? require_once(INST_PATH.'app/views/_header-contents.phtml'); ?>
+</head>
+<body>
+    <dmb-page-background>
+        <? readfile(INST_PATH.'app/webroot/images/logo.svg'); ?>
+    </dmb-page-background>
+    <h1>Basilisk Project Management System</h1>
+    <dmb-dialog delay="0.5" no-close>
+        <dmb-login
+            target="/admin/"
+            user-label="<?=_('admin.login.username.label');?>"
+            pass-label="<?=_('admin.login.password.label');?>"
+            button-label="<?=_('admin.login.button.label');?>"
+        >
+            <div class="site-logo">
+            <? readfile(INST_PATH.'app/webroot/images/logo.svg'); ?>
+            </div>
+        </dmb-login>
+    </dmb-dialog>
+    <? require_once(INST_PATH.'app/views/_footer-contents.phtml'); ?>
+</body>
+</html>

@@ -35,14 +35,13 @@ function adminMenu() {
         new menuEntry('/admin/users', 'Usuarios', null, 'users'),
         new menuEntry('/admin/translations', _('admin.menu.label.translations'), null, 'g_translate'),
         new menuEntry('/admin/profile', _('admin.menu.label.profile'), null, 'profile'),
-        new menuEntry('/index/logout?logout=1', 'Salir', null, 'exit')
+        new menuEntry('/admin/logout?logout=1', 'Salir', null, 'exit')
     ];
 }
 
 function generalMenu() {
     return [
         new menuEntry('/index/index', 'Inicio', null, 'home'),
-        new menuEntry('/admin/users', 'Usuarios', null, 'user'),
         new menuEntry('/index/logout?logout=1', 'Salir', null, 'exit')
     ];
 }

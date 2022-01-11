@@ -2,9 +2,11 @@
 
 trait CommonTrait {
     private $_loginLevel = 1;
+    public $noTemplate = ['logout'];
 
     public function loginAction() {
         $this->layout = false;
+        empty($_SESSION['user']) or header("Location: /{$this->controller}/index");
     }
 
     public function signinAction() {

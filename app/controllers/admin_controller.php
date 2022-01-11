@@ -7,6 +7,9 @@ class AdminController extends Page {
 
     public $layout = 'layout';
     public $helper = ['Sessions','Menu'];
+    public $exceptsBeforeFilter = [
+        'actions' => 'login,logout,signin'
+    ];
 
     public function __construct() {
         parent::__construct();
@@ -25,6 +28,7 @@ class AdminController extends Page {
 
     public function indexAction() {
         $this->render = ['text'=>'noop'];
+        $this->pageTitle = 'Admin';
     }
 
     public function buildlanguagesAction() {
