@@ -49,9 +49,10 @@ trait AdminBaseTrait {
                 empty($conditions) or ($conditions = "{$conditions} OR ");
                 $conditions = "{$conditions}`{$field}` LIKE '%{$_POST['search']['term']}%'";
             endwhile;
+            empty($conditions) or ($conditions = "({$conditions})");
         endif;
 
-        $conditions = "{$this->_listConditions} ({$conditions})";
+        $conditions = "{$this->_listConditions} {$conditions}";
 
         $this->data = $this->{$this->_model_camelized}->Paginate(['conditions'=>$conditions]);
     }
