@@ -9,6 +9,7 @@ trait AdminBaseTrait {
     ];
     private $_is_routed = false;
     private $_actions = [];
+    private $_listConditions = '';
 
     private function _additional_before_filter() {}
 
@@ -50,6 +51,8 @@ trait AdminBaseTrait {
             endwhile;
         endif;
 
+        $conditions = "{$this->_listConditions} ({$conditions})";
+
         $this->data = $this->{$this->_model_camelized}->Paginate(['conditions'=>$conditions]);
     }
 
@@ -89,7 +92,6 @@ trait AdminBaseTrait {
 
     public function landingAction() {
         $this->render = ['text'=>'noop'];
-
         if($this->_is_routed):
             empty($this->params[0]) and ($this->params[0] = 'list');
             switch($this->params[0]):
@@ -102,11 +104,12 @@ trait AdminBaseTrait {
                 case 'delete':
                     $this->_delete_reg();
                 break;
-                case 'list':
-                    $this->_list_regs();
-                break;
                 case 'save':
                     $this->_save_reg();
+                break;
+                case 'list':
+                default:
+                    $this->_list_regs();
                 break;
             endswitch;
         endif;
