@@ -1,0 +1,53 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql
+    container_name: db
+    cap_add:
+      - SYS_NICE
+    restart: always
+    ports:
+      - 3306:3306
+    command:
+      - --table_definition_cache=100
+      - --performance_schema=0
+      - --innodb_use_native_aio=0
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./config/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_DATABASE: 'basilisk'
+      MYSQL_USER: 'basilisk'
+      MYSQL_PASSWORD: 'Ba21l1sk%'
+      MYSQL_ROOT_PASSWORD: 'basilisk'
+      MYSQL_ROOT_HOST: '%'
+  basilisk:
+    build: .
+    volumes:
+      - ./:/var/www/html
+    container_name: basilisk
+    restart: always
+    tty: true
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - 80:80
+    environment:
+      DB_HOST: db
+  phpmyadmin:
+    image: phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+volumes:
+  dbdata:
+    driver: local

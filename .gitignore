@@ -6,3 +6,5 @@ app/webroot/test.html
 *.po
 coverage.xml
 test-result.xml
+dbdata
+dbdata/

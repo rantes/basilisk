@@ -1,0 +1,4 @@
+CREATE DATABASE basilisk DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+CREATE USER 'basilisk'@'%' IDENTIFIED BY 'Ba21l1sk%';
+GRANT ALL PRIVILEGES ON basilisk.* TO 'basilisk'@'%';
+FLUSH PRIVILEGES;

@@ -13,6 +13,7 @@ class testIndexController extends dumboTests {
     }
 
     public function _init_() {
+        $_SESSION = [];
         $this->_controller = new IndexController();
     }
 

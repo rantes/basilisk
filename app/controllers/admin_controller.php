@@ -2,8 +2,8 @@
 require_once INST_PATH.'app/controllers/admin_base_trait.php';
 require_once INST_PATH.'app/controllers/common_trait.php';
 class AdminController extends Page {
-    use AdminBaseTrait;
     use CommonTrait;
+    use AdminBaseTrait;
 
     public $layout = 'layout';
     public $helper = ['Sessions','Menu'];
@@ -13,6 +13,9 @@ class AdminController extends Page {
 
     public function __construct() {
         parent::__construct();
+        $this->exceptsBeforeFilter = [
+            'actions' => 'signin,login,logout'
+        ];
 
         textdomain('translations');
     }
