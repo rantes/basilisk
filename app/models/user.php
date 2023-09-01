@@ -27,8 +27,12 @@ class User extends ActiveRecord {
     }
 
     public function sanitize() {
-        $this->firstname = htmlentities($this->firstname, ENT_QUOTES, 'UTF-8',false);
-        $this->lastname = htmlentities($this->lastname, ENT_QUOTES, 'UTF-8',false);
+        if (!empty($this->firstname)):
+            $this->firstname = htmlentities($this->firstname, ENT_QUOTES, 'UTF-8',false);
+        endif;
+        if (!empty($this->lastname)):
+            $this->lastname = htmlentities($this->lastname, ENT_QUOTES, 'UTF-8',false);
+        endif;
     }
 
     public function encryptPassword() {

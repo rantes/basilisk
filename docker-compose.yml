@@ -22,24 +22,32 @@ services:
       MYSQL_PASSWORD: 'Ba21l1sk%'
       MYSQL_ROOT_PASSWORD: 'basilisk'
       MYSQL_ROOT_HOST: '%'
+    healthcheck:
+      test: mysqladmin ping -h db -u $$MYSQL_USER --password=$$MYSQL_PASSWORD
+      interval: 10s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
   basilisk:
     build: .
     volumes:
       - ./:/var/www/html
     container_name: basilisk
-    restart: always
+    restart: on-failure
     tty: true
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     links:
       - db
     ports:
       - 80:80
+      - 443:443
     environment:
       DB_HOST: db
   phpmyadmin:
     image: phpmyadmin
-    restart: always
+    restart: on-failure
     depends_on:
       - db
     links:

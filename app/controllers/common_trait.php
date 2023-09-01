@@ -25,6 +25,7 @@ trait CommonTrait {
     */
     public function logoutAction() {
         $this->layout = false;
+        $this->render['action'] = false;
         php_sapi_name() !== 'cli' and session_destroy();
         $_SESSION = null;
         unset($_SESSION);

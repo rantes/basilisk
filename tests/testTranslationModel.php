@@ -32,7 +32,8 @@ class testTranslationModel extends dumboTests {
         $t = $this->Translation->Niu([
             'keyid' => 'test.key',
             'domain' => 'domain',
-            'locale' => 'en_US'
+            'locale' => 'en_US',
+            'translation' => 'test'
         ]);
         $result = $t->Save();
         $errors = $t->_error->errFields();
@@ -45,7 +46,8 @@ class testTranslationModel extends dumboTests {
         $this->describe('Should set domain field if is empty');
         $t = $this->Translation->Niu([
             'keyid' => 'domain.test.key',
-            'locale' => 'en_US'
+            'locale' => 'en_US',
+            'translation' => 'test'
         ]);
         $result = $t->Save();
         $errors = $t->_error->errFields();
@@ -77,12 +79,14 @@ class testTranslationModel extends dumboTests {
         
         $t = $this->Translation->Niu([
             'keyid' => 'domain.test.key',
-            'locale' => 'en_US'
+            'locale' => 'en_US',
+            'translation' => 'test'
         ]);
 
         $tok = $this->Translation->Niu([
             'keyid' => 'domain.test.key',
-            'locale' => 'es_CO'
+            'locale' => 'es_CO',
+            'translation' => 'test'
         ]);
 
         $tbad = $this->Translation->Niu([

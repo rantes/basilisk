@@ -99,7 +99,6 @@ class testIndexController extends dumboTests {
         $this->assertTrue($code === HTTP_401, 'Should set a 401 response code on signin try for wrong user.');
 
         $testUser = [
-            'id' => 1,
             'firstname' => 'test',
             'lastname' => 'test',
             'identification_kind_id' => '1',

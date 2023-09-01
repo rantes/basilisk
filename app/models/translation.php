@@ -11,11 +11,13 @@ class Translation extends ActiveRecord {
     }
 
     public function setDomain() {
-        empty($this->domain) and ($this->domain = explode('.', $this->keyid)[0]);
+        !empty($this->keyid) and empty($this->domain) and ($this->domain = explode('.', $this->keyid)[0]);
     }
 
     public function sanitize() {
-        $this->translation = htmlentities($this->translation, ENT_QUOTES, 'UTF-8', false);
+        if (!empty($this->translation)):
+            $this->translation = htmlentities($this->translation, ENT_QUOTES, 'UTF-8', false);
+        endif;
     }
 
     public function checkKeyID() {
